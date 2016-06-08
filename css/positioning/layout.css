@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.octopus-wrapper {
+  position: relative;
+  width: 100%
+}
+
+#octopus {
+  display: block;
+  width: auto;
+  margin: auto;
+  top: 200px;
+  z-index: 1;
+  position: relative;
+}
+
+#hat {
+  display: block;
+  width: auto;
+  margin: auto;
+  top: -140px;
+  z-index: 2;
+  position: relative;
+}
+
+#glasses {
+  display: block;
+  width: auto;
+  margin: auto;
+  top: -150px;
+  z-index: 3;
+  position: relative;
+}
