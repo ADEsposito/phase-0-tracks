@@ -49,3 +49,23 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+/* Media Query for Syntax Reference
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
+
+@media screen and (max-width: 509px) {
+  h1{
+    font-size: medium;
+  }
+}
+
+@media screen and (max-width: 509px) {
+  figure {
+    display: none;
+  }
+}
