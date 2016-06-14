@@ -1,10 +1,14 @@
 - determine if you need to go up or down
-  - if there are two buttons on the panel
-    - if you need to go down
-      - press button marked with downward pointing arrow
-    - if you need to go up
-      - press button marked with upward facing arrow
-  - else press button
+  - if floor you need to go to is on a higher number than current floor
+    - go up
+  - if floor you need to go to is on a lower number than current floor
+    - go down
+- if there are two buttons on the panel
+  - if you need to go down
+    - press button marked with downward pointing arrow
+  - if you need to go up
+    - press button marked with upward facing arrow
+- else press button
 - enter elevator
 - turn to 180 degrees to face button panel on interior wall, next to doors
 - determine which specific floor you need to go to
