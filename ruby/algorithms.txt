@@ -1,0 +1,35 @@
+- determine if you need to go up or down
+  - if there are two buttons on the panel
+    - if you need to go down
+      - press button marked with downward pointing arrow
+    - if you need to go up
+      - press button marked with upward facing arrow
+  - else press button
+- enter elevator
+- turn to 180 degrees to face button panel on interior wall, next to doors
+- determine which specific floor you need to go to
+  - if response is a number
+    - press matching button
+  - if response is "lobby"
+     - press button marked "L"
+  - if response is "penthouse"
+    - press button marked "PH"
+  - if response is "parking"
+    - press button marked "P"
+  - if response is "parking level" + number
+    - press button marked "P + number"
+  - if response is "basement"
+    - press button marked "B"
+  - else
+    - take image of panel, send to human, and ask human to view buttons available, and help determine floor needed
+      - if human provides an answer that has a matching button
+        - press button
+      - else
+        - ask human to answer using the abbreviation listed on the appropriate button
+- wait for elevator to stop and doors to open at appropriate floor
+  - if elevator stops moving and doors do not open
+    - press button marked with a bell icon
+  - if elevator doors open and floor is not the floor selected
+    - remain in the elevator
+  - else
+    - exit elevator
