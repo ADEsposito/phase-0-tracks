@@ -1,3 +1,4 @@
+ALGORITHM TO USE AN ELEVATOR (RELEASE 0)
 - determine if you need to go up or down
   - if floor you need to go to is on a higher number than current floor
     - go up
@@ -37,3 +38,162 @@
     - remain in the elevator
   - else
     - exit elevator
+
+ALGORITHM TO MAKE A SANDWICH (RELEASE 1)
+- determine type of sandwich to make
+  - want meat?
+    - if yes
+      - make ham and swiss cheese sandwich
+    - if no
+      - make lettuce, cucumber, tomato, and provolone cheese sandwich
+    - if unsure
+      - make BLT sandwich
+- walk into kitchen
+- open fridge
+  - get bread
+    - remove loaf of bread from shelf
+    - open bag
+    - take out 2 slices of bread
+    - close bag
+    - put loaf of bread back on shelf
+  - get sandwich ingredients based on sandwich type
+    - if ham and swiss cheese
+      - remove ham from shelf
+      - remove swiss cheese from shelf
+      - remove mayonnaise from shelf
+      - remove Dijon mustard from shelf
+    - if lettuce, cucumber, tomato, and provolone
+      - remove lettuce head from crisper
+      - remove cucumber from crisper
+      - remove provolone cheese from shelf
+    - if BLT
+      - remove bacon from shelf
+      - remove lettuce head from crisper
+- close fridge
+- place ingredients on counter
+  - if lettuce, cucumber, tomato, and provolone
+    - get tomato from bowl on counter
+    - place tomato with other ingredients
+  - if BLT
+    - get tomato from bowl on counter
+    - place tomato with other ingredients
+- open 2nd cabinet from left
+- remove plate
+- close cabinet
+- open first drawer from left
+- remove knife
+- close drawer
+- if ham and swiss cheese
+  - place both slices of bread side by side on plate
+  - open mustard jar
+  - using knife, scoop out some mustard
+  - apply mustard evenly on slice of bread on left side of plate
+  - close mustard jar
+  - open mayonnaise bottle
+  - squeeze a small amount of mayonnaise on slice of bread on right side of plate
+  - use knife to spread mayonnaise out evenly
+  - close mayonnaise bottle
+  - open ham package
+  - remove 4 slices of ham
+  - place all 4 slices of ham on left slice of bread, on top of mustard
+  - close ham package
+  - open swiss cheese package
+  - remove 2 slices of swiss cheese
+  - place both slices of swiss cheese on top of ham
+  - close swiss cheese package
+  - pick up slice of bread with mayonnaise on it
+  - place bread, mayonnaise side facing the ham and cheese, on top of the swiss cheese
+  - open fridge
+  - return unused ham, swiss, mayonnaise, and mustard to fridge
+  - close fridge
+- if lettuce, cucumber, tomato, and provolone
+  - place both slices of bread side by side on plate
+  - open provolone cheese package
+  - remove 2 slices of provolone
+  - place both slices of provolone on bread on left side of plate
+  - close cheese package
+  - remove 2 leaves of lettuce from lettuce head
+  - place both pieces of lettuce on top of provolone
+  - remove cucumber from ziplock baggie
+  - walk to sink
+  - remove cutting board from counter next to sink
+  - place cutting board next to plate
+  - place cucumber on cutting board
+  - using knife, slice off 6 1/4" wide slices of cucumber
+  - arrange cucumber slices in a single layer on top of lettuce
+  - place remaining uncut cucumber back in ziplock baggie, and seal it
+  - place tomato on cutting board so that stem and end are pointing horizontally
+  - using knife, slice tomato into 1/4" slices
+  - pick up stem and end slices
+  - walk to sink
+  - open cabinet under the sink
+  - pull out trash can
+  - place stem and end slices in trash can
+  - slide trash can back in
+  - close cabinet
+  - return to plate and cutting board
+  - arrange remaining tomato slices on top of cucumber
+  - place plain slice of bread on top of tomato slices
+  - return unused lettuce, cucumber, and provolone to fridge
+  - close fridge
+- if BLT
+  - place both slices of bread side by side on plate
+  - open cabinet with plates
+  - remove a second plate
+  - walk to sink
+  - remove 4 pieces of paper towel from roll
+  - return to plates and cutting board
+  - place 3 slices of paper towel on top of second (empty) plate
+  - open bacon package
+  - remove 4 slices of bacon
+  - place bacon on top of paper towels on plate
+  - cover bacon with last piece of paper towel
+  - open microwave
+  - place bacon plate inside microwave
+  - close microwave
+  - press "quick min" 3 times
+  - press start
+  - while bacon cooks, return to making sandwich
+  - remove 2 leaves of lettuce from lettuce head
+  - place both pieces of lettuce on top of bread slice on left side of plate
+  - place tomato on cutting board so that stem and end are pointing horizontally
+  - using knife, slice tomato into 1/4" slices
+  - pick up stem and end slices
+  - walk to sink
+  - open cabinet under the sink
+  - pull out trash can
+  - place stem and end slices in trash can
+  - slide trash can back in
+  - close cabinet
+  - return to plate and cutting board
+  - arrange remaining tomato slices on top of second piece of bread (on right side of plate)
+  - when microwave finishes, remove plate with bacon
+  - remove top piece of paper towel and set aside
+  - carefully pick up bacon and place 2 slices horizontally on top of lettuce, and 2 slice vertically on top of horizontal bacon
+  - take used paper towels (all 4 pieces)
+  - walk to sink
+  - open cabinet under sink
+  - pull out trash can
+  - place paper towels in trash
+  - slide trash can back in
+  - close cabinet
+  - return to plate with sandwich fixings on it
+  - carefully take piece of bread with tomatoes on it and place, tomato side facing bacon, on top of bacon
+  - return unused bacon and lettuce to fridge
+  - close fridge
+- gather any used utensils/plates/cutting board
+- take items to sink and place in sink on the left
+- turn on faucet
+- pick up sponge
+- pick up dish soap
+- apply dime size amount of dish soap to sponge
+- wash utensils/plates/cutting board with soapy sponge
+- rinse utensils/plates/cutting board with running water
+- open dishwasher
+- pull out bottom rack
+- place utensils in basket
+- place plate in rack
+- place cutting board in rack
+- slide bottom rack back in
+- close dishwasher
+- eat sandwich
