@@ -1,3 +1,24 @@
 body {
-  background-color: pink;
+  max-width: 960px;
+  background-image: url(http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/istock_000078603065_small.jpg);
+  color: white;
+}
+
+header {
+  font-family: Helvetica;
+}
+
+.column-1 {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 100px;
+  width: 30%;
+  position: relative;
+}
+
+.column-2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  position: relative;
 }
