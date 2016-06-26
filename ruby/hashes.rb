@@ -30,6 +30,7 @@ if bold_colors == "y"
 else
   bold = false
 end
+
 # Ask if client likes pastels
 puts "Does the client like pastel colors? (y/n)"
 # Store pastels preference
@@ -39,6 +40,7 @@ if pastel_colors == "y"
 else
   pastel = false
 end
+
 # Ask if client likes solids
 puts "Does the client like solids? (y/n)"
 # Store if client likes solids
@@ -48,6 +50,7 @@ if solids == "y"
 else
   solid = false
 end
+
 # Ask if client likes patterns
 puts "Does the client like patterns? (y/n)"
 # Store if client likes patterns
