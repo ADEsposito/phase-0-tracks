@@ -43,26 +43,7 @@
 #DEBUGGING TEST:
 #puts "Consonants changed: " + next_consonant(new_first_name).capitalize + " " + next_consonant(new_last_name).capitalize
 
-
-
-real_name_array = []
-alias_name_array = []
-real_name = nil
-
-until real_name == "exit"
-  # ask user to enter spy's real name
-  puts "Please enter the spy's real name: "
-
-  # store real name in a variable
-  real_name = gets.chomp.downcase
-
-  # swap first and last name
-  split_name = real_name.split(' ')
-  swapped_name = split_name.reverse
-  new_first_name = swapped_name[0]
-  new_last_name = swapped_name[1]
-
-  def convert_name(string)
+def convert_name(string)
     index_i = 0
     str_length = string.length
     reference_vowels = "aeiou"
@@ -89,9 +70,32 @@ until real_name == "exit"
       index_i += 1
     end
     string = string
-  end
+   end
+
+names = {}
+
+loop do
+  # ask user to enter spy's real name
+  puts "Please enter the spy's real name or type 'exit' : "
+
+  # store real name in a variable
+  real_name = gets.chomp.downcase
+
+  #exit when user enters "exit"
+  break if real_name == "exit"
+
+  # swap first and last name
+  split_name = real_name.split(' ')
+  swapped_name = split_name.reverse
+  new_first_name = swapped_name[0]
+  new_last_name = swapped_name[1]
 
   alias_name = convert_name(new_first_name).capitalize + " " + convert_name(new_last_name).capitalize
+  names[real_name] = alias_name
+  puts alias_name
+end
 
-  puts real_name_array.push(real_name.capitalize).to_s + " is: " + alias_name_array.push(alias_name).to_s
+puts "The list of names and their aliases are : "
+names.each do |real_name, alias_name|
+  puts "#{real_name} is #{alias_name}"
 end
