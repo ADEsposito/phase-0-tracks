@@ -136,6 +136,14 @@ end
 
 get_input
 
+# REFLECTIONS
+# I learned to be more aware of my pseudocode and not just use simple comments, but provide the key words indicating IF/ELSE/etc
+# Hashes are much more logical choice since it will let you pair up the item with the quantity, as opposed to running two separate arrays (one for food, one for quantities)
+# A method returns a value
+# You can pass most anything into methods as arguments
+# By manipulating variables, you can pass information from one method to another
+# In this challenge, I feel that my grasp on hashes has been improved, as well as my understanding of how pseudocode should look. I also enjoyed being introduced to a more modular approach to getting user input (thanks, Clint!).
+# I still feel a bit shaky on my use of pseudocode (and my fear that I'm still doing it wrong), but, as with everything, with practice comes competency!
 
 # Test run using iTerm
 #ruby :> ruby gps2_2.rb
@@ -242,5 +250,3 @@ get_input
 #- To EXIT press 'E
 #E
 #Thank you for using 'GROCERY LIST'
-
-ruby :>
