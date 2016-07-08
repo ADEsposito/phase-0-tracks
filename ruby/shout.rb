@@ -22,7 +22,7 @@ module Shout
   end
 end
 
-# Write 2 classes representing anything that might shout, and include the Shout module in those classes
+# Write two classes representing anything that might shout, and include the Shout module in those classes
 class Girl
   include Shout
 end
@@ -31,7 +31,7 @@ class Boy
   include Shout
 end
 
-# Driver code that instantiates instances of the classes and calls the 2 module methods on each instance
+# Driver code that instantiates instances of the classes and calls the two module methods on each instance
 girl = Girl.new
 girl.yell_angrily("I'm yelling angrily")
 girl.yell_happily("I'm yelling happily")
