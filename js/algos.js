@@ -1,4 +1,11 @@
 // Release 0: Find the Longest Phrase
+// create counter to count letters in a word
+// create variable to hold longest Phrase
+// loop over array by index
+  // count letters in each index location
+  // compare longestPhrase with each new word
+  // keep longestPhrase in variable
+//print variable
 function longestPhraseFinder(array) {
 	var letters = 0;
 	var longestPhrase = " ";
@@ -13,6 +20,9 @@ function longestPhraseFinder(array) {
 }
 
 // Release 1: Find a Key-Value Match
+// split object into distinct arrays (gets rid of keys and stores only values)
+//compare each index of each array
+  //return true or false depending if values are a match
 function keyValueMatch(object1, object2) {
 	var array1 = [];
 	var array2 = [];
@@ -36,10 +46,14 @@ function keyValueMatch(object1, object2) {
 }
 
 // Release 2: Generate Random Test Data
+// generate random integer
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// take an integer and use that to set length of word
+// pull random letters out of alphabet to create word of n-length
+// return word
 function randomWord(integer) {
 	var text = "";
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -48,6 +62,11 @@ function randomWord(integer) {
 	return text;
 }
 
+//create empty array
+// determine array length based on integer provided
+  // use random integer, 1 through 10
+// use loop to call randomWord and add to the array
+// when loop has reached integer provided, print array
 function randomTestData(number) {
 	testDataArray = [];
 	var arrayLength = number;
