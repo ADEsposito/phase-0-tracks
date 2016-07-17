@@ -1,10 +1,10 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [with: Angelo Deleon].
+# We spent [3.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# lets the file know that it needs an additional file to run and what that file is named.
 #
 require_relative 'state_data'
 
@@ -46,10 +46,8 @@ class VirusPredictor
       mult_factor = 0.05
     end
 
-
     number_of_deaths = (@population * mult_factor).floor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
 
   # creates speed variable, calculates speed of virus spread based on population_density instance variable. Prints results.
@@ -116,3 +114,5 @@ STATE_DATA.each do |state, data|
 
 #=======================================================================
 # Reflection Section
+#What are the differences between the two different hash syntaxes shown in the state_data file? : They are nested hashes. The syntaxes shown are mainly for ease of readability (the equals vs the hash rocket).
+#What does require_relative do? How is it different from require? : Require relative tells the program that it will need an additional file to run. Require_relative lets you list a file relative the the current file (in the same directory), but require you have to list the entire file path.
