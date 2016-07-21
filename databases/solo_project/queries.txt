@@ -1,0 +1,30 @@
+sqlite> select * from horses;
+1|Man 'O War|3|chestnut|true|1
+2|Secretariat|2|chestnut|true|1
+3|John Henry|5|bay|false|2
+4|Phar Lap|7|chestnut|false|3
+5|Native Dancer|4|gray|true|2
+6|Sham|2|black|true|2
+7|Winning Colors|6|gray|true|3
+
+sqlite> update horses set healthy="true" where name="Phar Lap";
+
+sqlite> select * from horses, trainers where horses.trainer_id = trainers.id;
+1|Man 'O War|3|chestnut|true|1|1|Bob Baffert
+2|Secretariat|2|chestnut|true|1|1|Bob Baffert
+3|John Henry|5|bay|false|2|2|D. Wayne Lukas
+4|Phar Lap|7|chestnut|true|3|3|Gai Waterhouse
+5|Native Dancer|4|gray|true|2|2|D. Wayne Lukas
+6|Sham|2|black|true|2|2|D. Wayne Lukas
+7|Winning Colors|6|gray|true|3|3|Gai Waterhouse
+
+sqlite> select horses.name, horses.color, horses.healthy, trainers.name from horses join trainers on horses.trainer_id = trainers.id;
+Man 'O War|chestnut|true|Bob Baffert
+Secretariat|chestnut|true|Bob Baffert
+John Henry|bay|false|D. Wayne Lukas
+Phar Lap|chestnut|true|Gai Waterhouse
+Native Dancer|gray|true|D. Wayne Lukas
+Sham|black|true|D. Wayne Lukas
+Winning Colors|gray|true|Gai Waterhouse
+
+sqlite> delete from horses where healthy="false";
