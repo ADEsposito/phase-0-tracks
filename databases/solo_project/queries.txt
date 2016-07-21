@@ -28,3 +28,65 @@ Sham|black|true|D. Wayne Lukas
 Winning Colors|gray|true|Gai Waterhouse
 
 sqlite> delete from horses where healthy="false";
+
+# different types of joins
+* inner join
+* left join
+* right join
+* outer join
+* left join excluding inner join
+* right join excluding inner join
+* outer join excluding inner join
+* cross join
+* self referencing join
+* equi join
+* non equi join
+* natural join
+* full outer join
+
+
+#inner join
+sqlite> select horses.name, horses.color, trainers.name from horses inner join trainers on horses.trainer_id = trainers.id;
+Man 'O War|chestnut|Bob Baffert
+Secretariat|chestnut|Bob Baffert
+Phar Lap|chestnut|Gai Waterhouse
+Native Dancer|gray|D. Wayne Lukas
+Sham|black|D. Wayne Lukas
+Winning Colors|gray|Gai Waterhouse
+
+#left outer join
+sqlite> select horses.trainer_id, horses.name, trainers.name from horses left outer join trainers on horses.trainer_id = trainers.id;
+1|Man 'O War|Bob Baffert
+1|Secretariat|Bob Baffert
+3|Phar Lap|Gai Waterhouse
+2|Native Dancer|D. Wayne Lukas
+2|Sham|D. Wayne Lukas
+3|Winning Colors|Gai Waterhouse
+
+#cross join
+select horses.trainer_id, horses.name, trainers.name from horses left outer join trainers on horses.trainer_id = trainers.id;
+1|Man 'O War|Bob Baffert
+1|Secretariat|Bob Baffert
+3|Phar Lap|Gai Waterhouse
+2|Native Dancer|D. Wayne Lukas
+2|Sham|D. Wayne Lukas
+3|Winning Colors|Gai Waterhouse
+sqlite> select * from horses cross join trainers;
+1|Man 'O War|3|chestnut|true|1|1|Bob Baffert
+1|Man 'O War|3|chestnut|true|1|2|D. Wayne Lukas
+1|Man 'O War|3|chestnut|true|1|3|Gai Waterhouse
+2|Secretariat|2|chestnut|true|1|1|Bob Baffert
+2|Secretariat|2|chestnut|true|1|2|D. Wayne Lukas
+2|Secretariat|2|chestnut|true|1|3|Gai Waterhouse
+4|Phar Lap|7|chestnut|true|3|1|Bob Baffert
+4|Phar Lap|7|chestnut|true|3|2|D. Wayne Lukas
+4|Phar Lap|7|chestnut|true|3|3|Gai Waterhouse
+5|Native Dancer|4|gray|true|2|1|Bob Baffert
+5|Native Dancer|4|gray|true|2|2|D. Wayne Lukas
+5|Native Dancer|4|gray|true|2|3|Gai Waterhouse
+6|Sham|2|black|true|2|1|Bob Baffert
+6|Sham|2|black|true|2|2|D. Wayne Lukas
+6|Sham|2|black|true|2|3|Gai Waterhouse
+7|Winning Colors|6|gray|true|3|1|Bob Baffert
+7|Winning Colors|6|gray|true|3|2|D. Wayne Lukas
+7|Winning Colors|6|gray|true|3|3|Gai Waterhouse
