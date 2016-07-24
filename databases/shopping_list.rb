@@ -66,8 +66,14 @@ def display_all_items(database, item, purchased, store_name)
     puts "ITEM: #{item} ---- #{purchased} ---- STORE: #{store_name}"
   end
 end
-# method to display all items not yet purchased with just the store
+# method to display all items not yet purchased within a particular store
 def display_not_purchased(database, item, quantity, purchased, store_name)
+  display = $database.execute("SELECT item, quantity FROM shopping WHERE purchased = 'false' AND store_name = (?)", [store_name])
+  puts "ITEMS NOT PURCHASED YET FROM #{store_name.upcase}"
+  puts "***********************"
+  display.each do |item, quantity|
+    puts "ITEM: #{item} ---- QUANTITY: #{quantity}"
+  end
 end
 
 def get_input
@@ -129,6 +135,12 @@ def get_input
 
     if choice == 'I'
       display_all_items($database, item, purchased, store_name)
+    end
+
+    if choice == 'N'
+      puts "What store do you wish to view the remaining items to be purchased for?"
+      store_name = gets.chomp
+      display_not_purchased($database, item, quantity, purchased, store_name)
     end
 
     if choice == 'E'
