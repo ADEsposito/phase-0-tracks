@@ -23,7 +23,9 @@ def add_to_list(database, item, quantity, store_name, purchased)
 end
 
 # method to remove item from list
-
+def remove_from_list(database, item)
+  $database.execute("DELETE FROM shopping WHERE item = (?)", [item])
+end
 # method to update quantity of item
 
 # method to update item to purchased status
@@ -55,6 +57,13 @@ def get_input
       name = gets.chomp
       purchased = "false"
       add_to_list($database, item, quantity, name, purchased)
+      exit = false
+    end
+
+    if choice == 'R'
+      puts "What item would you like to remove?"
+      item = gets.chomp
+      remove_from_list($database, item)
       exit = false
     end
 
