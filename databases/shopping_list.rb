@@ -41,6 +41,7 @@ end
 def display_by_store(database, item, quantity, purchased, store_name)
   display = $database.execute("SELECT item, quantity, purchased FROM shopping WHERE store_name = (?)", [store_name])
   puts store_name.upcase
+  puts "**************"
   display.each do |item, quantity, purchased|
     if purchased == "false"
       purchased = "not purchased"
@@ -52,6 +53,22 @@ def display_by_store(database, item, quantity, purchased, store_name)
 end
 
 # method to display list of all items and status (purchased/not purchased)
+def display_all_items(database, item, purchased, store_name)
+  display = $database.execute("SELECT item, purchased, store_name FROM shopping")
+  puts "QUICK OVERVIEW"
+  puts "**************"
+  display.each do |item, purchased, store_name|
+    if purchased == "false"
+      purchased = "not purchased"
+    else
+      purchased = "purchased"
+    end
+    puts "ITEM: #{item} ---- #{purchased} ---- STORE: #{store_name}"
+  end
+end
+# method to display all items not yet purchased with just the store
+def display_not_purchased(database, item, quantity, purchased, store_name)
+end
 
 def get_input
   exit = false
@@ -60,9 +77,10 @@ def get_input
     puts "- To ADD to your list press'A'"
     puts "- To REMOVE an item from your list press 'R'"
     puts "- To UPDATE the quantity of an item press 'U'"
-    puts "- To set an item as PURCHASED press 'P'"
-    puts "- To view your list by STORE press 'S'"
-    puts "- To view your list by ITEMS and STATUS press 'I'"
+    puts "- To set the status of an item as PURCHASED press 'P'"
+    puts "- To view your list by STORE (item/quantity/status) press 'S'"
+    puts "- To view your list by ITEMS (item/status/store) regardless of store press 'I'"
+    puts "- To view your only the NOT PURCHASED items within a particular store (item/quantity) press 'N'"
     puts "- To EXIT press 'E'"
 
     choice = gets.chomp
@@ -107,6 +125,10 @@ def get_input
       puts "What store would you like to view your list for?"
       store_name = gets.chomp
       display_by_store($database, item, quantity, purchased, store_name)
+    end
+
+    if choice == 'I'
+      display_all_items($database, item, purchased, store_name)
     end
 
     if choice == 'E'
