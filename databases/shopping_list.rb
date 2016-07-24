@@ -27,7 +27,9 @@ def remove_from_list(database, item)
   $database.execute("DELETE FROM shopping WHERE item = (?)", [item])
 end
 # method to update quantity of item
-
+def update_quantity(database, quantity, item)
+  $database.execute("UPDATE shopping SET quantity = (?) WHERE item = (?)", [quantity, item])
+end
 # method to update item to purchased status
 
 # method to display all items for a particular store
@@ -64,6 +66,17 @@ def get_input
       puts "What item would you like to remove?"
       item = gets.chomp
       remove_from_list($database, item)
+      puts "#{item} has been removed from your list."
+      exit = false
+    end
+
+    if choice == 'U'
+      puts "What item would you like to update the quantity for?"
+      item = gets.chomp
+      puts "What is the new quantity for #{item}?"
+      quantity = gets.chomp
+      update_quantity($database, quantity, item)
+      puts "#{item} has been updated to have a quantity of #{quantity}."
       exit = false
     end
 
