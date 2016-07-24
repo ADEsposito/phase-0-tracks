@@ -14,5 +14,19 @@ create_shopping_table = <<-SQL
   )
 SQL
 
-# create shopping table
+create_stores_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS stores(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255)
+  )
+SQL
+
+create_stores_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS stores(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255)
+  )
+SQL
+# create shopping and stores table
 database.execute(create_shopping_table)
+database.execute(create_stores_table)
