@@ -36,7 +36,20 @@ end
 def update_purchased_status(database, purchased, item)
   $database.execute("UPDATE shopping SET purchased = ('true') WHERE item = (?)", [item])
 end
+
 # method to display all items for a particular store
+def display_by_store(database, item, quantity, purchased, store_name)
+  display = $database.execute("SELECT item, quantity, purchased FROM shopping WHERE store_name = (?)", [store_name])
+  puts store_name.upcase
+  display.each do |item, quantity, purchased|
+    if purchased == "false"
+      purchased = "not purchased"
+    else
+      purchased = "purchased"
+    end
+    puts "ITEM: #{item} ---- QTY: #{quantity} ---- #{purchased}"
+  end
+end
 
 # method to display list of all items and status (purchased/not purchased)
 
@@ -48,7 +61,7 @@ def get_input
     puts "- To REMOVE an item from your list press 'R'"
     puts "- To UPDATE the quantity of an item press 'U'"
     puts "- To set an item as PURCHASED press 'P'"
-    puts "- To view your list by STORES press 'S'"
+    puts "- To view your list by STORE press 'S'"
     puts "- To view your list by ITEMS and STATUS press 'I'"
     puts "- To EXIT press 'E'"
 
@@ -88,6 +101,12 @@ def get_input
       puts "What item have you purchased?"
       item = gets.chomp
       update_purchased_status($database, purchased, item)
+    end
+
+    if choice == 'S'
+      puts "What store would you like to view your list for?"
+      store_name = gets.chomp
+      display_by_store($database, item, quantity, purchased, store_name)
     end
 
     if choice == 'E'
