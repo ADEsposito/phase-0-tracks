@@ -18,9 +18,8 @@ SQL
 $database.execute(create_shopping_table)
 
 # method to add item to list
-def add_to_list(database, item, quantity, store_name)
-  $database.execute("INSERT INTO shopping (item, quantity, store_name) VALUES (?, ?, ?)", [item, quantity, store_name])
-  $database.execute("INSERT INTO stores (name) VALUES (?)", [name])
+def add_to_list(database, item, quantity, store_name, purchased)
+  $database.execute("INSERT INTO shopping (item, quantity, store_name, purchased) VALUES (?, ?, ?, ?)", [item, quantity, store_name, purchased])
 end
 
 # method to remove item from list
@@ -40,7 +39,9 @@ def get_input
     puts "- To ADD to your list press'A'"
     puts "- To REMOVE an item from your list press 'R'"
     puts "- To UPDATE the quantity of an item press 'U'"
-    puts "- To PRINT your list press 'P'"
+    puts "- To set an item as PURCHASED press 'P'"
+    puts "- To view your list by STORES press 'S'"
+    puts "- To view your list by ITEMS and STATUS press 'I'"
     puts "- To EXIT press 'E'"
 
     choice = gets.chomp
@@ -52,7 +53,8 @@ def get_input
       quantity = gets.chomp
       puts "What store will you get #{item} from?"
       name = gets.chomp
-      add_to_list($database, item, quantity, name)
+      purchased = "false"
+      add_to_list($database, item, quantity, name, purchased)
       exit = false
     end
 
