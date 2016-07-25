@@ -66,6 +66,7 @@ def display_all_items(database, item, purchased, store_name)
     puts "ITEM: #{item} ---- #{purchased} ---- STORE: #{store_name}"
   end
 end
+
 # method to display all items not yet purchased within a particular store
 def display_not_purchased(database, item, quantity, purchased, store_name)
   display = $database.execute("SELECT item, quantity FROM shopping WHERE purchased = 'false' AND store_name = (?)", [store_name])
@@ -73,6 +74,18 @@ def display_not_purchased(database, item, quantity, purchased, store_name)
   puts "***********************"
   display.each do |item, quantity|
     puts "ITEM: #{item} ---- QUANTITY: #{quantity}"
+  end
+end
+
+# method to delete all rows from table and wipe the slate clean
+def delete_all(database, answer)
+  if answer == 'Y'
+    $database.execute("DELETE FROM shopping")
+    puts "All items have been deleted!"
+  elsif answer == 'N'
+    puts "Nothing has been deleted."
+  else
+    puts "Please enter a valid response (Y/N)"
   end
 end
 
@@ -87,6 +100,7 @@ def get_input
     puts "5. To view your list by STORE (item/quantity/status) press '5'"
     puts "6. To view your list by ITEMS (item/status/store) regardless of store press '6'"
     puts "7. To view your only the NOT PURCHASED items within a particular store (item/quantity) press '7'"
+    puts "8. To DELETE ALL ITEMS and associated info press '8'"
     puts "- To EXIT press 'E'"
 
     choice = gets.chomp
@@ -144,6 +158,13 @@ def get_input
       puts "What store do you wish to view the remaining items to be purchased for?"
       store_name = gets.chomp
       display_not_purchased($database, item, quantity, purchased, store_name)
+      exit = false
+    end
+
+    if choice == '8'
+      puts "Are you certain you want to remove all items and related data from your list? Press 'Y' to confirm and 'N' to go back."
+      answer = gets.chomp
+      delete_all($database, answer)
       exit = false
     end
 
