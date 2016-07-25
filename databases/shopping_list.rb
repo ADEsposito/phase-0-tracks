@@ -80,18 +80,18 @@ def get_input
   exit = false
 
   until exit
-    puts "- To ADD to your list press'A'"
-    puts "- To REMOVE an item from your list press 'R'"
-    puts "- To UPDATE the quantity of an item press 'U'"
-    puts "- To set the status of an item as PURCHASED press 'P'"
-    puts "- To view your list by STORE (item/quantity/status) press 'S'"
-    puts "- To view your list by ITEMS (item/status/store) regardless of store press 'I'"
-    puts "- To view your only the NOT PURCHASED items within a particular store (item/quantity) press 'N'"
+    puts "1. To ADD to your list press '1'"
+    puts "2. To REMOVE an item from your list press '2'"
+    puts "3. To UPDATE the quantity of an item press '3'"
+    puts "4. To set the status of an item as PURCHASED press '4'"
+    puts "5. To view your list by STORE (item/quantity/status) press '5'"
+    puts "6. To view your list by ITEMS (item/status/store) regardless of store press '6'"
+    puts "7. To view your only the NOT PURCHASED items within a particular store (item/quantity) press '7'"
     puts "- To EXIT press 'E'"
 
     choice = gets.chomp
 
-    if choice == 'A'
+    if choice == '1'
       puts "Please enter the item you wish to add :"
       item = gets.chomp
       puts "How many would you like to add?"
@@ -103,7 +103,7 @@ def get_input
       exit = false
     end
 
-    if choice == 'R'
+    if choice == '2'
       puts "What item would you like to remove?"
       item = gets.chomp
       remove_from_list($database, item)
@@ -111,7 +111,7 @@ def get_input
       exit = false
     end
 
-    if choice == 'U'
+    if choice == '3'
       puts "What item would you like to update the quantity for?"
       item = gets.chomp
       puts "What is the new quantity for #{item}?"
@@ -121,26 +121,30 @@ def get_input
       exit = false
     end
 
-    if choice == 'P'
+    if choice == '4'
       puts "What item have you purchased?"
       item = gets.chomp
       update_purchased_status($database, purchased, item)
+      exit = false
     end
 
-    if choice == 'S'
+    if choice == '5'
       puts "What store would you like to view your list for?"
       store_name = gets.chomp
       display_by_store($database, item, quantity, purchased, store_name)
+      exit = false
     end
 
-    if choice == 'I'
+    if choice == '6'
       display_all_items($database, item, purchased, store_name)
+      exit = false
     end
 
-    if choice == 'N'
+    if choice == '7'
       puts "What store do you wish to view the remaining items to be purchased for?"
       store_name = gets.chomp
       display_not_purchased($database, item, quantity, purchased, store_name)
+      exit = false
     end
 
     if choice == 'E'
