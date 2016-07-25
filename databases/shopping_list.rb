@@ -14,7 +14,7 @@ create_shopping_table = <<-SQL
   )
 SQL
 
-# create shopping and stores table
+# create shopping table
 $database.execute(create_shopping_table)
 
 # method to add item to list
@@ -77,6 +77,16 @@ def display_not_purchased(database, item, quantity, purchased, store_name)
   end
 end
 
+# method to view just the stores
+def display_stores(database, store_name)
+  display = $database.execute("SELECT DISTINCT store_name FROM shopping")
+  puts "STORES TO GO TO"
+  puts "***************"
+  display.each do |store|
+    puts store
+  end
+end
+
 # method to delete all rows from table and wipe the slate clean
 def delete_all(database, answer)
   if answer == 'Y'
@@ -89,6 +99,8 @@ def delete_all(database, answer)
   end
 end
 
+
+
 def get_input
   exit = false
 
@@ -100,7 +112,8 @@ def get_input
     puts "5. To view your list by STORE (item/quantity/status) press '5'"
     puts "6. To view your list by ITEMS (item/status/store) regardless of store press '6'"
     puts "7. To view your only the NOT PURCHASED items within a particular store (item/quantity) press '7'"
-    puts "8. To DELETE ALL ITEMS and associated info press '8'"
+    puts "8. To view only the STORES on your list press '8'"
+    puts "9. To DELETE ALL ITEMS and associated info press '9'"
     puts "- To EXIT press 'E'"
 
     choice = gets.chomp
@@ -162,6 +175,11 @@ def get_input
     end
 
     if choice == '8'
+      display_stores($database, store_name)
+      exit = false
+    end
+
+    if choice == '9'
       puts "Are you certain you want to remove all items and related data from your list? Press 'Y' to confirm and 'N' to go back."
       answer = gets.chomp
       delete_all($database, answer)
