@@ -30,6 +30,8 @@
     * for submitted search requests
     * requests where you want the user to be able to pull up the same page again
 # What is a cookie?
-  *
+  * a small piece of data sent from a website and stored in the user's web browser while the user is browsing.
+  * can be used to remember info like what's in a shopping card, the user's browsing activity (clicking buttons, logging in, etc), to remember info that the user has entered before (name, address, password, etc)
+  * various types of cookies (authentication, tracking, session cookie, persistent cookie, secure cookie, http only cookie, same site cookie, third-party cookie, supercookie)
 # How does it relate to HTTP requests?
-  *
+  *  cookies are plain text; they contain no executable code. A web page or server instructs a browser to store this information and then send it back with each subsequent request based on a set of rules. Web servers can then use this information to identify individual users. 
