@@ -8,8 +8,15 @@
   * use shell scripts to increase leverage and portability
   * avoid captive user interfaces
   * make every program a filter
-  
+
 # In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
-  *
+  * A VPS is a virtual server that is a piece of a physical server. A physical server is partitioned into its own virtual server. The person who has a virtual server cannot access the other partitioned off virtual servers that are on that same physical server. It is still a dedicated server.
+
+  * Advantages:
+    * cheaper than a physical server
+    * can customize it so you don't have to get options you don't need
+    * easily scalable
+    * more control than if you used shared hosting (eg: can use scripts you might not be able to in the shared space)
+    
 # Why is it considered a bad idea to run programs as the root user on a Linux system?
   *
