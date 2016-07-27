@@ -17,6 +17,6 @@
     * can customize it so you don't have to get options you don't need
     * easily scalable
     * more control than if you used shared hosting (eg: can use scripts you might not be able to in the shared space)
-    
+
 # Why is it considered a bad idea to run programs as the root user on a Linux system?
-  *
+  * allows you to make changes that may impact everything on the system in a negative way (rm -rf, malicious code, accidentally everything in the system)
