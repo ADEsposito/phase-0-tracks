@@ -46,7 +46,24 @@ get '/students/:id' do
 end
 
 # write a /contact route that displays an address
+get '/contact' do
+  "351 W. Hubbard St., Chicago, IL 60654"
+end
 
 # write a /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
 
 # write a route that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string
+get '/add_two_numbers/:number1/plus/:number2' do
+  number1 = params[:number1].to_i
+  number2 = params[:number2].to_i
+  answer = number1 + number2
+  "#{params[:number1]} plus #{params[:number2]} is #{answer}"
+end
