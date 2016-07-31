@@ -1,0 +1,12 @@
+body {
+    background-color: DimGray;
+}
+
+p {
+  color: Gainsboro;
+  font-size: xx-large;
+}
+
+input {
+  background-color: LawnGreen;
+}
