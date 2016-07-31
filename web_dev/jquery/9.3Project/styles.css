@@ -1,0 +1,21 @@
+body {
+    background-color: DimGray;
+}
+
+p {
+  color: AliceBlue;
+  font-size: xx-large;
+}
+
+input {
+  background-color: LawnGreen;
+}
+
+#randomQuote {
+  color: AliceBlue;
+}
+
+button {
+  background-color: DeepPink;
+  color: AliceBlue;
+}
