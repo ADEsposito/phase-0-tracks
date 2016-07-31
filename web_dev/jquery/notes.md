@@ -16,4 +16,8 @@
   * Then I plan to skim the docs
   * Next I plan to watch some YouTube videos and practice skills
   * After a break, I plan to look through my JQuery book and then practice a bit more.
-  
+
+# Most Effective methods
+  * I found that watching a couple of tutorials helped me wrap my brain around topics that I had skimmed over/familiarized myself with a bit
+  * I found that reading the JQuery book didn't help me as much since it wasn't very tangible
+  * The most beneficial to me was just playing around, testing things out
